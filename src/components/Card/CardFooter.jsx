@@ -14,9 +14,14 @@ export default function CardFooter({ action, id, archived }) {
     );
   return (
     <footer className='card__footer'>
-      <Button label='delete' eventHandler={() => deleteNote(id)} />
       <Button
-        label={archived ? 'unarchive' : 'archive'}
+        className='btn--danger'
+        label='Delete'
+        eventHandler={() => deleteNote(id)}
+      />
+      <Button
+        className='btn--success'
+        label={archived ? 'Unarchived' : 'Archived'}
         eventHandler={() => archiveNote(id)}
       />
     </footer>

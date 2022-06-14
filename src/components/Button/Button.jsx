@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Button({ label, eventHandler }) {
+export default function Button({ label, eventHandler, className }) {
   return (
     <button
-      className='card__button'
+      className={`btn ${className}`}
       type='button'
       onClick={eventHandler}
       data-action={label}>

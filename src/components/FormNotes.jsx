@@ -8,15 +8,15 @@ export default function FormNotes({ updateNote }) {
 
   const createNote = (event) => {
     event.preventDefault();
-    const timeStamp = new Date().toISOString();
+    const timestamp = new Date().toISOString();
     updateNote((notes) => [
       ...notes,
       {
-        id: timeStamp,
+        id: timestamp,
         title,
         body: note,
         archived: false,
-        createAt: timeStamp,
+        createdAt: timestamp,
       },
     ]);
   };

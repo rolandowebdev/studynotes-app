@@ -1,3 +1,11 @@
+:root {
+  --background-color: #1b2430;
+  --card-color: #313d4d;
+  --text-color: #fff;
+  --danger-color: #f24c4c;
+  --success-color: #53bf9d;
+}
+
 *,
 *::after,
 *::before {
@@ -15,6 +23,7 @@ p {
 
 button {
   border: 0;
+  font-family: inherit;
 }
 
 input,
@@ -30,11 +39,11 @@ img {
 }
 
 body {
-  display: grid;
-  place-items: center;
   min-height: 100vh;
-  font-family: 'Popins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.5;
+  background-color: var(--background-color);
+  color: var(--text-color);
   overflow-x: hidden;
 }
 
@@ -43,7 +52,6 @@ body {
   grid-template-areas: 'form' 'main';
   grid-template-columns: 1fr;
   gap: 2rem;
-  max-width: 100%;
   margin: 2rem;
 }
 
@@ -55,15 +63,76 @@ body {
   grid-area: 'main';
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 
 
 /* Note Card */
 
+.notes-section {
+  margin-top: 1rem;
+}
+
+.notes-section .notes-section__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.0313rem;
+  text-transform: uppercase;
+}
+
 .card {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: var(--card-color);
+  border-radius: 0.5rem;
+}
+
+.card .card__header {
+  margin-bottom: 0.75rem;
+}
+
+.card .body-card {
+  font-weight: 300;
+  margin-top: 0.25rem;
+  color: #b2bac5;
+}
+
+.card__header .header-text {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.header-text>h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.header-text>small {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #a5afbd;
+}
+
+.card .card__footer {
   display: flex;
   flex-direction: column;
-  /* background-color: ; */
-  gap: 1rem;
+  gap: 0.875rem;
+}
+
+.card__footer .btn {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-color);
+  border-radius: 0.5rem;
+}
+
+.btn--danger {
+  background-color: var(--danger-color);
+}
+
+.btn--success {
+  background-color: var(--success-color);
 }
