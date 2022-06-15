@@ -89,7 +89,7 @@ body {
   align-items: center;
   padding: 1rem;
   background-color: var(--card-color);
-  border-bottom: 1px solid var(--gray-color);
+  border-bottom: 4px solid var(--gray-color);
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
