@@ -22,6 +22,6 @@
     "react/prop-types": "off",
     "spaced-comment": 1,
     "quotes": [1, "double"],
-    "no-duplicate-imports": 1
+    "no-duplicate-imports": "off"
   }
 }
