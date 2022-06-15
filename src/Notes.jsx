@@ -1,9 +1,10 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { getInitialData } from './utils';
 import SectionNotes from './components/SectionNotes';
 import SearchNotes from './components/SearchNotes';
 import FormNotes from './components/FormNotes';
+import HeaderNotes from './components/HeaderNotes';
+import { useState, useEffect } from 'react';
+import { getInitialData } from './utils';
 
 export default function Notes() {
   const [query, setQuery] = useState('');
@@ -23,25 +24,28 @@ export default function Notes() {
 
   return (
     <>
-      <div className='form-container'>
-        <SearchNotes
-          search={query}
-          updateQuery={setQuery}
-          updateNotes={setNotes}
-        />
-        <FormNotes updateNote={setNotes} />
-      </div>
-      <main className='main-container'>
-        <SectionNotes
-          label='Active Notes'
-          notes={activeNotes}
-          setNotes={setNotes}
-        />
-        <SectionNotes
-          label='Archive Notes'
-          notes={archivedNotes}
-          setNotes={setNotes}
-        />
+      <HeaderNotes />
+      <main className='container'>
+        <div className='form-wrapper'>
+          <SearchNotes
+            search={query}
+            updateQuery={setQuery}
+            updateNotes={setNotes}
+          />
+          <FormNotes updateNote={setNotes} />
+        </div>
+        <div className='section-wrapper'>
+          <SectionNotes
+            label='Active Notes'
+            notes={activeNotes}
+            setNotes={setNotes}
+          />
+          <SectionNotes
+            label='Archive Notes'
+            notes={archivedNotes}
+            setNotes={setNotes}
+          />
+        </div>
       </main>
     </>
   );
