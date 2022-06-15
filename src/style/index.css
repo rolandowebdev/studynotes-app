@@ -4,6 +4,7 @@
   --text-color: #fff;
   --danger-color: #f24c4c;
   --success-color: #53bf9d;
+  --gray-color: #b2bac5;
 }
 
 *,
@@ -21,16 +22,33 @@ p {
   font-weight: 400;
 }
 
-button {
-  border: 0;
-  font-family: inherit;
-}
-
 input,
 textarea {
   display: block;
-  font-family: inherit;
   width: 100%;
+}
+
+button,
+input[type='submit'] {
+  cursor: pointer;
+  transition: 150ms ease;
+}
+
+button:hover,
+input[type='submit']:hover {
+  opacity: 0.8;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--success-color);
+}
+
+button,
+input,
+textarea {
+  border: 0;
+  font-family: inherit;
 }
 
 img {
@@ -63,25 +81,84 @@ body {
   grid-area: 'main';
   display: flex;
   flex-direction: column;
-  /* gap: 2rem; */
+}
+
+
+/* Input style */
+
+.input-text {
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0.25rem;
+  background-color: var(--card-color);
+  color: var(--text-color);
+}
+
+.input-textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  margin-bottom: 0.25rem;
+}
+
+
+/* Button style */
+
+.btn--danger {
+  background-color: var(--danger-color);
+}
+
+.btn--success {
+  background-color: var(--success-color);
+}
+
+
+/* Note Form */
+
+.form-notes {
+  margin-top: 2rem;
+}
+
+.title-input {
+  position: relative;
+}
+
+.title-input {
+  border-radius: 0.25rem;
+}
+
+.title-input .title-input__counter {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--text-color);
 }
 
 
 /* Note Card */
 
 .notes-section {
-  margin-top: 1rem;
+  margin-block: 2rem;
 }
 
 .notes-section .notes-section__title {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 0.0313rem;
+  letter-spacing: 0.0625rem;
   text-transform: uppercase;
+  margin-bottom: 0.25rem;
 }
 
 .card {
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   padding: 1rem;
   background-color: var(--card-color);
   border-radius: 0.5rem;
@@ -92,27 +169,22 @@ body {
 }
 
 .card .body-card {
-  font-weight: 300;
-  margin-top: 0.25rem;
-  color: #b2bac5;
-}
-
-.card__header .header-text {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
+  font-weight: 200;
+  margin-top: 0.375rem;
 }
 
 .header-text>h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
 .header-text>small {
+  padding: 0.125rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 500;
-  color: #a5afbd;
+  color: var(--gray-color);
+  border-radius: 50px;
 }
 
 .card .card__footer {
@@ -129,10 +201,27 @@ body {
   border-radius: 0.5rem;
 }
 
-.btn--danger {
-  background-color: var(--danger-color);
+@media (min-width: 48rem) {
+  #root {
+    grid-template-areas: 'form form' 'main main';
+    grid-template-columns: repeat(2, minmax(12.5rem, 1fr));
+  }
+  .notes-section {
+    margin-top: 0;
+  }
 }
 
-.btn--success {
-  background-color: var(--success-color);
+@media (min-width: 52.5rem) {
+  .card__header .header-text {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  #root {
+    max-width: 1024px;
+    margin-inline: auto;
+  }
 }

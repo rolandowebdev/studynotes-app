@@ -23,17 +23,19 @@ export default function FormNotes({ updateNote }) {
 
   return (
     <form className='form-notes' onSubmit={createNote}>
-      <h2 className='form-notes__title'>Add note</h2>
-      <small className='form-notes__counter'>{50 - title.length}</small>
-      <Input
-        value={title}
-        onChange={setTitle}
-        type='text'
-        placeholder='Add title...'
-        id='title'
-        name='title'
-        required
-      />
+      <h2 className='section-title'>Add Note</h2>
+      <div className='title-input'>
+        <small className='title-input__counter'>50 / {50 - title.length}</small>
+        <Input
+          value={title}
+          onChange={setTitle}
+          type='text'
+          placeholder='Add title...'
+          id='title'
+          name='title'
+          required
+        />
+      </div>
       <Input
         value={note}
         onChange={setNote}
