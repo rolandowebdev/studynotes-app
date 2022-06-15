@@ -1,19 +1,17 @@
-import React from 'react';
+import React from "react";
 
 export default function Input(attributes) {
   const changeHandler = (event) => {
-    if (attributes.name === 'title') {
+    if (attributes.name === "title") {
       const currentText = event.target.value;
-      attributes.onChange((oldText) =>
-        currentText.length <= 50 ? currentText : oldText
-      );
+      attributes.onChange((oldText) => (currentText.length <= 50 ? currentText : oldText));
     } else {
       attributes.onChange(event.target.value);
     }
   };
   return (
     <>
-      {attributes.type === 'textarea' ? (
+      {attributes.type === "textarea" ? (
         <textarea
           {...attributes}
           className='input-text input-textarea'

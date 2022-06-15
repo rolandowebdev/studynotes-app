@@ -1,10 +1,10 @@
-import React from 'react';
-import { useState } from 'react';
-import Input from './Input/Input';
+import React from "react";
+import { useState } from "react";
+import Input from "./Input/Input";
 
 export default function FormNotes({ updateNote }) {
-  const [title, setTitle] = useState('');
-  const [note, setNote] = useState('');
+  const [title, setTitle] = useState("");
+  const [note, setNote] = useState("");
 
   const createNote = (event) => {
     event.preventDefault();

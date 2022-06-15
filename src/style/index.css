@@ -29,7 +29,7 @@ textarea {
 }
 
 button,
-input[type='submit'] {
+input[type="submit"] {
   font-weight: 600;
   font-size: 1.125rem;
   color: var(--text-color);
@@ -38,7 +38,7 @@ input[type='submit'] {
 }
 
 button:hover,
-input[type='submit']:hover {
+input[type="submit"]:hover {
   opacity: 0.8;
 }
 
@@ -62,7 +62,7 @@ img {
 body {
   min-height: 100vh;
   margin: 2rem;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   line-height: 1.5;
   color: var(--text-color);
   background-color: var(--background-color);
@@ -113,18 +113,18 @@ body {
 
 .container {
   display: grid;
-  grid-template-areas: 'form' 'section';
+  grid-template-areas: "form" "section";
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 2.75rem;
 }
 
 .form-wrapper {
-  grid-area: 'form';
+  grid-area: "form";
 }
 
 .section-wrapper {
-  grid-area: 'section';
+  grid-area: "section";
   display: flex;
   flex-direction: column;
 }
@@ -253,7 +253,7 @@ body {
 
 @media (min-width: 48rem) {
   .container {
-    grid-template-areas: 'form form' 'section section';
+    grid-template-areas: "form form" "section section";
     grid-template-columns: repeat(2, minmax(12.5rem, 1fr));
   }
   .notes-section {

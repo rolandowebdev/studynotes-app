@@ -1,6 +1,6 @@
-import React from 'react';
-import NavMenu from './Menu/NavMenu';
-import StudyNotes from '../assets/studynotes.svg';
+import React from "react";
+import NavMenu from "./Menu/NavMenu";
+import StudyNotes from "../assets/studynotes.svg";
 
 export default function HeaderNotes() {
   return (

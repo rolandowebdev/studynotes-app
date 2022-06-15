@@ -1,5 +1,5 @@
-import React from 'react';
-import Card from './Card/Card';
+import React from "react";
+import Card from "./Card/Card";
 
 export default function SectionNotes({ label, notes, setNotes }) {
   return (
