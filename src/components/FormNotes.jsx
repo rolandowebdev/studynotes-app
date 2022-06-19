@@ -20,7 +20,7 @@ export default function FormNotes({ updateNote }) {
     } else {
       Toast.fire({
         icon: "success",
-        title: "Your note accepted!",
+        title: "Your note is created!",
       });
     }
     updateNote((notes) => [
