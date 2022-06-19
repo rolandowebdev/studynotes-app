@@ -36,6 +36,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
-    "prettier": "^2.7.0"
+    "prettier": "^2.7.0",
+    "sweetalert2": "^11.4.17",
+    "sweetalert2-react-content": "^5.0.0"
   }
 }

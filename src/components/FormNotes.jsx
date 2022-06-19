@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
+
 import Input from "./Input/Input";
+import Toast from "./Alert/Toast";
 
 export default function FormNotes({ updateNote }) {
   const [title, setTitle] = useState("");
@@ -9,6 +11,18 @@ export default function FormNotes({ updateNote }) {
   const createNote = (event) => {
     event.preventDefault();
     const timestamp = new Date().toISOString();
+    if (title === "" || note === "") {
+      Toast.fire({
+        icon: "error",
+        title: "Title or Note must be filled!",
+      });
+      return false;
+    } else {
+      Toast.fire({
+        icon: "success",
+        title: "Your note accepted!",
+      });
+    }
     updateNote((notes) => [
       ...notes,
       {
@@ -33,7 +47,6 @@ export default function FormNotes({ updateNote }) {
           placeholder='Add title...'
           id='title'
           name='title'
-          required
         />
       </div>
       <Input
@@ -43,7 +56,6 @@ export default function FormNotes({ updateNote }) {
         placeholder='Write a note...'
         id='note'
         name='note'
-        required
       />
       <Input type='submit' id='submitNote' name='submit-note' value='Create' />
     </form>
